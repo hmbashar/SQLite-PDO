@@ -43,13 +43,14 @@ try {
     // echo '<br>';
     // echo "Record with ID $idToDelete deleted successfully.";
 
-        // Update a record
-    $idToUpdate = 7;
-    $newCalory = 350;
-    $stmt = $pdo->prepare("UPDATE foods SET calory = :calory WHERE id = :id");
-    $stmt->execute([':calory' => $newCalory, ':id' => $idToUpdate]);
+    // Update a record
+    $idToUpdate = 8;
+    $newCalory = 450;
+    $newName = 'Pizza Margherita';
+    $stmt = $pdo->prepare("UPDATE foods SET calory = :calory, name = :name WHERE id = :id");
+    $stmt->execute([':calory' => $newCalory, ':name' => $newName, ':id' => $idToUpdate]);
     echo '<br>';
-    echo "Record with ID $idToUpdate updated successfully to new calory: $newCalory.";
+    echo "Record with ID $idToUpdate updated successfully to new calory: $newCalory. New name: $newName";
 
 
 } catch (PDOException $e) {
